@@ -1,8 +1,13 @@
 public class Operators{
 	public static void main(String[] args){
 		//Assignment Operator(=)
-		int num1 = 13;
+		int num1 = 19;
 		int num2 = 5;
+		
+		num1 += num2;
+		
+		
+		
 		
 		//Arithmetic Operators(+,*,-,/,%)
 		int sum = num1 + num2;
