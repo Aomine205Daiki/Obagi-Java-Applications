@@ -12,10 +12,12 @@ public class BankingApp{
 	}
 	
 	public double withdrawal(int amount){
-		accountBalance -= amount;
 		
 		if(amount > accountBalance){
 			System.out.println("Insufficient funds");
+		}
+		else{
+		accountBalance -= amount;
 		}
 		
 		return accountBalance;
@@ -29,7 +31,7 @@ public class BankingApp{
 		BankingApp bankApp = new BankingApp();
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("Welcome to UBA");
+		System.out.println("Welcome to UBA Bank");
 		System.out.println("Enter 1 to Deposit");
 		System.out.println("Enter 2 to Withdraw");
 		System.out.println("Enter 3 to Check Balance");
@@ -49,25 +51,34 @@ public class BankingApp{
 				
 				System.out.println("Account Name: " + bankApp.accountName);
 				System.out.println("Account Number: " + bankApp.accountNumber);
-				System.out.println("Initial Balance: " + bankApp.accountBalance);
+				System.out.printf("Initial Balance: %c%.2f%n",'$',bankApp.accountBalance);
 				
 				bankApp.deposit(depositAmount);
-				System.out.printf("Your balance is %f%n",bankApp.checkBalance());
+				System.out.printf("Your balance is %c%.2f%n",'$',bankApp.checkBalance());
 				System.out.println("------------------------------");
 			}
 			break;
 			
 			case 2:
 			{
-				System.out.print("Enter amount: ");
+				System.out.print("Enter amount to withdraw: ");
 				int withdrawalAmount = input.nextInt();
 				
+				System.out.println("------------------------------");
+				
+				System.out.println("Account Name: " + bankApp.accountName);
+				System.out.println("Account Number: " + bankApp.accountNumber);
+				System.out.printf("Initial Balance: %c%.2f%n",'$',bankApp.accountBalance);
+				
 				bankApp.withdrawal(withdrawalAmount);
+				System.out.printf("Your balance is %c%.2f%n",'$',bankApp.checkBalance());
+				System.out.println("------------------------------");
 			}
 			break;
 			
 			case 3:
 			{
+				System.out.printf("Your balance is %c%.2f%n",'$',bankApp.checkBalance());
 			}
 			break;
 			
