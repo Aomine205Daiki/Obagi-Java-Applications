@@ -27,7 +27,7 @@ public class MathClassMethods{
 
 		System.out.printf("The maximum number is %f%n",Math.max(num1,num2));
 		
-		System.out.printf("---------------------------------------------------------------------%n");
+		System.out.println("---------------------------------------------------------------------");
 		
 		System.out.println("The area of a circle");
 		double radius;
